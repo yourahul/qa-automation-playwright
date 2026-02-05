@@ -1,6 +1,8 @@
 name: QA Automation Tests
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   test:
@@ -20,10 +22,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install playwright pytest pytest-html requests
-
-      - name: Install Playwright browser
-        run: playwright install chromium
+          playwright install --with-deps
 
       - name: Run tests in CI
-  run: xvfb-run pytest
-
+        run: xvfb-run pytest
