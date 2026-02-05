@@ -6,12 +6,13 @@ from playwright.sync_api import sync_playwright
 @pytest.fixture(scope="function")
 def page():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)# fixed
+        browser = p.chromium.launch(
+            headless=True,   # CI fix
+            args=["--no-sandbox", "--disable-dev-shm-usage"]
+        )
         context = browser.new_context()
         page = context.new_page()
-
         yield page
-
         browser.close()
 
 
