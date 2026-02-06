@@ -1,36 +1,44 @@
-# QA Automation Framework (Playwright + Pytest)
+# QA Automation Framework
 
-This project is a QA automation framework built using Python, Playwright, and Pytest.  
-It includes UI testing, API testing, database validation, HTML reports, and CI/CD setup.
+Automation testing framework built using Python, Playwright and Pytest.
 
 ## Features
-- Login test automation  
-- Signup test automation  
-- Add to cart test automation  
-- API testing (login API)  
-- Database validation using SQL  
-- HTML test reports  
+- UI automation: login, signup, add-to-cart  
+- API testing  
+- Database validation (SQLite + SQL)  
+- HTML test report  
 - Page Object Model structure  
-- GitHub Actions CI/CD pipeline  
+- GitHub Actions CI
 
 ## Tech Stack
-- Python  
-- Playwright  
-- Pytest  
-- Requests (API testing)  
-- SQLite (database testing)  
-- GitHub Actions  
+Python, Playwright, Pytest, SQL (SQLite), GitHub Actions
 
-## Project Structure
-qa-automation-playwright/
-│
-├── pages/ # Page object files
-├── tests/ # UI test cases
-├── api_tests/ # API tests
-├── db_tests/ # Database tests
-├── reports/ # HTML reports
-│
-├── conftest.py # Pytest fixtures
-├── requirements.txt
-├── test_db.sqlite
-└── README.md
+## Run Locally
+
+Clone the repo:
+```bash
+git clone https://github.com/yourahul/qa-automation-playwright.git
+cd qa-automation-playwright
+```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+python -m playwright install
+```
+
+Run tests:
+```bash
+pytest
+```
+
+Generate HTML report:
+```bash
+pytest --html=reports/report.html --self-contained-html
+```
+
+## CI/CD
+Tests run automatically on GitHub Actions on every push.
+
+## Author
+Rahul U
