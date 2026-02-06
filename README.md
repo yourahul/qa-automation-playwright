@@ -39,6 +39,3 @@ pytest --html=reports/report.html --self-contained-html
 
 ## CI/CD
 Tests run automatically on GitHub Actions on every push.
-
-## Author
-Rahul U
